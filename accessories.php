@@ -1,6 +1,7 @@
 <?php
 session_start();
 include('SignUp/database.php');
+include('Functions/common.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,10 +31,10 @@ include('SignUp/database.php');
                 <li><a href="Aboutus.php">About</a></li>
                 <li><a href="ContactUs.php">Contact Us</a></li>
                 <li class="search-box">
-                <form action="#" method="get">
+                <form action="Search.php" method="get">
                      <input type="text" name="data" aria-label="Search" placeholder="Search...">
                     <!-- <button type="submit">Search</button> -->
-                     <input type="submit" value="Search" class="search" name="product">
+                     <input type="submit" value="Search" class="Search" name="product">
                 </form>
             </li>
             <?php
@@ -61,23 +62,7 @@ include('SignUp/database.php');
             </div>
  <?php
 
-$select="select * from `accessories`" ;
-$result=mysqli_query($conn,$select);
-
-while ($row=mysqli_fetch_assoc($result)) {
-    $ID=$row['ID'];
-    $Title=$row['Title'];
-    $Description=$row['Description'];
-    $Image=$row['Image'];
-    $Price=$row['Price'];
-
-    echo"<div class='card'>
-        <img class='img' src='Products/$Image' alt=''>
-        <h2>$Title</h2>
-        <p>$Description</p>
-        <p class='price'>$Price $</p>
-    </div>";
-}
+getProduct();
 
 
 ?>

@@ -29,9 +29,10 @@ session_start();
             <li><a href="Aboutus.php">About</a></li>
             <li><a href="ContactUs.php">Contact Us</a></li>
                 <li class="search-box">
-                <form action="#" method="get">
-                     <input type="text" name="search" placeholder="Search...">
-                    <button type="submit">Search</button>
+                <form action="Search.php" method="get">
+                     <input type="text" name="data" aria-label="Search" placeholder="Search...">
+                    <!-- <button type="submit">Search</button> -->
+                     <input type="submit" value="Search" class="Search" name="product">
                 </form>
             </li>
             <?php

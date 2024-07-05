@@ -409,3 +409,13 @@ ul li:hover ul.d{
 
 
 }
+.Search{
+    padding: 10px 20px;
+    background-color: #555;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: "Josefin Sans";
+    align-self: self-end;
+}

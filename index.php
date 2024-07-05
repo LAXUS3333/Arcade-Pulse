@@ -8,7 +8,6 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arcade Pulse</title>
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/905bed9ec4.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="mation.css">
     <link rel="icon" href="Images/arcad.png" type="image/icon type">
@@ -30,9 +29,10 @@ session_start();
             <li><a href="Aboutus.php">About</a></li>
             <li><a href="ContactUs.php">Contact Us</a></li>
             <li class="search-box">
-                <form action="#" method="get">
-                    <input type="text" name="search" placeholder="Search...">
-                    <button type="submit">Search</button>
+            <form action="Search.php" method="get">
+                     <input type="text" name="data" aria-label="Search" placeholder="Search...">
+                    <!-- <button type="submit">Search</button> -->
+                     <input type="submit" value="Search" class="Search" name="product">
                 </form>
             </li>
             <?php
