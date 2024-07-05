@@ -1,5 +1,5 @@
 let sections= document.querySelectorAll('section')
-
+const news= 'news';
 
 window.onscroll=()=> {
     sections.forEach(sec=>{
