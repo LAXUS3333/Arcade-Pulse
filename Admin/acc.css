@@ -1,0 +1,76 @@
+body {
+    background-color: rgb(20, 20, 20);
+    color: rgb(127, 255, 30);
+    font-family: "Josefin Sans";
+    overflow-x: hidden;
+    align-items: center;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+nav {
+    background-color: rgb(38, 38, 38); /* Change background color as needed */
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end; /* Align items to the right */
+    align-items: center;
+}
+
+li {
+    display: inline;
+}
+
+a {
+    display: inline-block;
+    padding: 20px;
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    background-color: #555;
+    border-radius: 20px; /* Change hover background color as needed */
+}
+.search-box {
+    display: inline-block;
+    margin-left: auto;
+}
+
+input[type="text"] {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    font-family:  "Josefin Sans";
+}
+
+button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #555; /* Change button background color as needed */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: "Josefin Sans";
+    align-self:self-end;
+}
+h1{
+    text-align: center;
+    padding: 50px;
+}
+.form-label{
+    padding: 200px;margin-bottom: 50px;
+    text-align: center;
+    margin: 50px;
+
+}
+.form-control{
+    text-align: center;
+    padding: 0px;
+}

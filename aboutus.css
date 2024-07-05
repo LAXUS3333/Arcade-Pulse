@@ -1,0 +1,382 @@
+.container {
+    width: 100%;
+    display: flex;
+    text-align: center;
+    
+    }
+    
+    .left,
+    .right {
+    height: 100vh;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    }
+    
+    .video {
+        width: 64%;
+        height: 80%;
+    }
+.L{
+    width: 2vh;
+    height: 2vh;
+}
+.L {
+    width: 2vh;
+    height: 2vh;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.H {
+    position:relative; 
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    top: 50%;
+    animation: change 15s infinite ease-in-out;
+    animation-duration: 50s;
+    background-size: cover;
+}
+
+.box {
+    width: 300px;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.1); /* Set background color with opacity */
+    border-radius: 10px; /* Add rounded corners */
+    display: inline-block;
+    color: rgb(127, 255, 30);
+    position: absolute;
+    text-align: center;
+}
+
+.H::before {    
+    content: "";
+    background-size: cover;
+    position: relative;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.25;
+    animation: change 15s infinite ease-in-out;
+    animation-duration: 50s;
+}
+
+.arcade {
+    max-width: 100px;
+}
+
+body {
+    background-color: rgb(20, 20, 20);
+    color: rgb(127, 255, 30);
+    font-family: "Josefin Sans";
+}
+
+.img {
+    width: 150px;
+}
+
+nav {
+    background-color: rgb(38, 38, 38);
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+li {
+    display: inline;
+}
+
+a {
+    display: inline-block;
+    padding: 20px;
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+}
+
+a:hover {
+    background-color: #555;
+}
+
+.search-box {
+    display: inline-block;
+    margin-left: auto;
+}
+
+input[type="text"] {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    font-family:  "Josefin Sans";
+}
+
+button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #555;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: "Josefin Sans";
+    align-self: self-end;
+}
+ul li ul.d li{
+    display: block;
+    text-align: center;
+}
+
+ul li ul.d{
+    width: 10%;
+    background-color: #222;
+    position: absolute;
+    z-index: 999;
+    display: none;
+}
+
+ul li a:hover {
+    background-color: #555;
+}
+ul li:hover ul.d{
+    display: block;
+}
+footer {
+    background-color: #222;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center; /* Center align the content */
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 20px; /* Add space between sections */
+}
+
+.footer-section {
+    text-align: left;
+    padding: 20px; /* Increase padding for better spacing */
+    flex: 1; /* Make sections equal width */
+    max-width: 300px; /* Limit maximum width of each section */
+}
+
+.footer-section h2 {
+    font-size: 20px; /* Reduce font size for better proportion */
+    margin-bottom: 10px; /* Add space below heading */
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    font-family: "Josefin Sans";
+    margin-top: 10px;
+}
+.log{
+
+    padding: 10px;
+    margin-left: 5px;
+    margin-bottom: 7px;
+
+
+}
+
+.footer-bottom {
+    background-color: #000;
+    padding: 10px 0;
+    color: #fff;
+}
+#pp {
+    font-family: "Josefin Sans";
+}
+.sec-2 h1{
+    text-align: center;
+    font-size: 70px;
+    color: #ffbebe;
+}
+.sec-2{
+    text-align: center;
+}
+section{
+    min-height: 100vh;
+    justify-content: center;
+}
+.sec-2 p{
+    color: #e8e8e8;
+    padding: 30px;
+    font-size: 25px;
+}
+.sec-3{
+    display: flex;
+    justify-content: space-between;
+
+}
+.sec-3 div{
+    width: 50%;
+}
+.sec-3 h1{
+    font-size: 70px;
+    color: rgb(51, 250, 184);
+    width: 50%;
+    display: flex;
+    margin-left: 30px;}
+.sec-3 p{
+    color: #c2ffa3;
+    padding: 30px;
+    font-size: 25px;
+
+}
+.sec-3 img{
+    width: 80%;
+    height: 40%;
+    margin-bottom: 20px;
+    margin-left: 40px;
+} 
+.sec-3 a{
+    margin-left:25px ;
+}
+.sec-4{
+    padding: 30px;
+}
+.sec-4 h1{
+    font-size: 70px;
+    color: #c2ffa3;
+    text-align: center;
+}
+.ugh{color: #9bf1fe;
+padding: 30px;
+font-size: 25px;
+text-align: center;
+}
+
+.cards{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 30px;
+    margin-top: 60px;
+}
+.card{
+    height: 320px;
+    width: 340px;
+    background-color:rgb(26, 26, 26);
+    padding: 3% 8%;
+    border: solid rgb(19, 19, 19);
+    border-radius: 9px;
+    transition: 0.6s;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+.card:hover{
+    background-color: transparent;
+    transform: translateY(-9px);
+    border-color: #313131;
+}
+.card:hover i{
+    color: #9bf1fe;
+} 
+.card i{
+    color: rgb(103, 255, 171);
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-size: 4.8rem;
+
+}
+.card:after{
+    content:"";
+    position: absolute;
+    top: 150%;
+    left: -200px;
+    width: 120%;
+    transform:rotate(50deg) ;
+    background-color: #fff;
+    height:18px;
+    filter: blur(30px);
+    opacity: 0.5;
+    transition: 1s;
+}
+.card:hover:after{
+    width: 225%;
+    top:-100%;
+}
+.card h2{
+    text-align: center;
+    padding: 10px;
+    font-size: 39px;
+    color: #fff;
+}
+.card p{
+    color: rgb(249, 255, 216);
+    font-size: 20px;
+}
+.sesh{
+    padding: 80px;
+    text-align: center;
+}
+.sesh h1{
+    font-size: 40px;
+    color: #ffc3f7;
+    text-align: center;
+}
+.sesh p{
+    font-size: 40px;
+    text-align: center;
+    color: #fff;
+    padding: 9px;
+}
+.sesh a{
+    text-align: center;
+}
+section .animate{
+    transition: 1s;
+    opacity: 0;
+    filter: blur(5px);
+}
+section.show-animate .animate{
+    opacity: 1;
+    filter: blur(0);
+}
+
+.sec-2 .animate{
+    transform: translateX(100%);
+}
+.sec-2.show-animate .animate{
+    transform: translateX(0);
+}
+.sec-3 .animate{
+    transform: scale(.7);
+}
+.sec-3.show-animate .animate{
+    transform: scale(1);
+}

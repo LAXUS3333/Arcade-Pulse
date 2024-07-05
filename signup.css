@@ -1,0 +1,278 @@
+.L {
+    width: 2vh;
+    height: 2vh;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.H {
+    position:relative; 
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    top: 50%;
+    animation: change 15s infinite ease-in-out;
+    animation-duration: 50s;
+    background-size: cover;
+}
+
+.box {
+    width: 300px;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.1); /* Set background color with opacity */
+    border-radius: 10px; /* Add rounded corners */
+    display: inline-block;
+    color: rgb(127, 255, 30);
+    position: absolute;
+    text-align: center;
+}
+
+.H::before {    
+    content: "";
+    background-size: cover;
+    position: relative;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.25;
+    animation: change 15s infinite ease-in-out;
+    animation-duration: 50s;
+}
+
+.arcade {
+    max-width: 100px;
+}
+
+body {
+    background-color: rgb(20, 20, 20);
+    color: rgb(127, 255, 30);
+    font-family: "Josefin Sans";
+}
+
+.img {
+    width: 150px;
+}
+
+nav {
+    background-color: rgb(38, 38, 38);
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+li {
+    display: inline;
+}
+
+a {
+    display: inline-block;
+    padding: 20px;
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+}
+
+a:hover {
+    background-color: #555;
+}
+
+.search-box {
+    display: inline-block;
+    margin-left: auto;
+}
+
+input[type="text"] {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    font-family:  "Josefin Sans";
+}
+
+button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #555;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: "Josefin Sans";
+    align-self: self-end;
+}
+ul li ul.d li{
+    display: block;
+    text-align: center;
+}
+
+ul li ul.d{
+    width: 10%;
+    background-color: #222;
+    position: absolute;
+    z-index: 999;
+    display: none;
+}
+
+ul li a:hover {
+    background-color: #555;
+}
+ul li:hover ul.d{
+    display: block;
+}
+
+@keyframes change {
+    0% {
+        background-image: url(Images/11.jpg);
+        
+    }
+    20% {
+        background-image: url(Images/12.jpg);
+    }
+    40% {
+        background-image: url(Images/13.jpg);
+    }
+    60% {
+        background-image: url(Images/14.jpg);
+    }
+    80% {
+        background-image: url(Images/06.jpeg);
+    }
+    100% {
+        background-image: url(Images/11.jpg);
+    }
+}
+
+.box h1 {
+    margin-bottom: 20px; /* Add spacing below heading */
+}
+.box input[type="text"]
+{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    font-family: "Josefin Sans";
+}
+.box input[type="email"]
+{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    font-family: "Josefin Sans";
+}
+.box input[type="password"]
+{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    font-family: "Josefin Sans";
+}
+.box input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    font-family: "Josefin Sans";
+}
+
+.box input[type="submit"] {
+    background-color: #555;
+    color: white;
+    cursor: pointer;
+}
+
+.box p {
+    margin-top: 20px; /* Add spacing above paragraph */
+}
+
+.box a {
+    color: white;
+    text-decoration: underline;
+}
+
+.box a:hover {
+    color: #aaa; /* Change hover color */
+}
+footer {
+    background-color: #222;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center; /* Center align the content */
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 20px; /* Add space between sections */
+}
+
+.footer-section {
+    text-align: left;
+    padding: 20px; /* Increase padding for better spacing */
+    flex: 1; /* Make sections equal width */
+    max-width: 300px; /* Limit maximum width of each section */
+}
+
+.footer-section h2 {
+    font-size: 20px; /* Reduce font size for better proportion */
+    margin-bottom: 10px; /* Add space below heading */
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    font-family: "Josefin Sans";
+    margin-top: 10px;
+}
+
+.footer-bottom {
+    background-color: #000;
+    padding: 10px 0;
+    color: #fff;
+}
+#pp {
+    font-family: "Josefin Sans";
+}
+
+.signUp:hover{
+    background-color: transparent;
+    color: rgb(127, 255, 30);
+}
