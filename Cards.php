@@ -1,6 +1,9 @@
 <?php
 session_start();
+include('SignUp/database.php');
+include('Functions/common.php');
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +13,7 @@ session_start();
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/905bed9ec4.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="cards.css">
+    <link rel="stylesheet" href="accessory.css">
     <link rel="icon" href="Images/arcad.png" type="image/icon type">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -49,6 +53,22 @@ session_start();
             ?>
         </ul>
 </nav>
+<h1>Cards</h1>
+<div class="cards">
+        <div class="card">
+        <img class="img" src="Accessories/1.png" alt="">
+        <h2>Razer Naga Pro Wireless Gaming Mouse</h2>
+            <p>With nearly 30,000 games from AAA to indie and 
+                everything in-between.</p>
+                <p class="price">200 $</p>
+            </div>
+ <?php
+
+getCard();
+
+
+?>
+</div>
 <footer>
         <div class="footer-content">
             <div class="footer-section about">

@@ -1,6 +1,6 @@
 <?php
 include('../SignUp/database.php');
-if (isset($_POST['accessories'])){
+if (isset($_POST['cards'])){
 
     $title=$_POST['title'];
     $description=$_POST['description'];
@@ -14,9 +14,9 @@ if (isset($_POST['accessories'])){
         exit();
     }
     else{
-        move_uploaded_file($temp,"../Products/$image");
+        move_uploaded_file($temp,"../Cards/$image");
 
-        $insert="Insert into `accessories` (Title,Description,Image,Price,Date,Status)
+        $insert="Insert into `cards` (Title,Description,Image,Price,Date,Status)
         values('$title','$description','$image','$price',NOW(),'$status')";
         $result=mysqli_query($conn,$insert);
         if ($result) {
@@ -33,7 +33,7 @@ if (isset($_POST['accessories'])){
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/905bed9ec4.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="acc.css">
-    <title>Accessories</title>
+    <title>Cards</title>
     <link rel="icon" href="../Images/arcad.png" type="image/icon type">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -81,7 +81,7 @@ if (isset($_POST['accessories'])){
 <nav>
         <ul>
             <li><a href="#">Games</a></li>
-            <li><a href="#">Accessories</a></li>
+            <li><a href="acc.php">Accessories</a></li>
             <li><a href="cards.php">Cards</a></li>
             <li><a href="user.php">Users</a></li>
             <li><a href="#">Orders</a></li>
@@ -94,20 +94,20 @@ if (isset($_POST['accessories'])){
         </ul>
     </nav>
 
-    <h1>Insert Accessories</h1>
+    <h1>Insert Cards</h1>
 
     <div class="input-container">
     <form action="" method="post" enctype="multipart/form-data">
-        <label for="title">Accessory Title:</label>
+        <label for="title">Card Title:</label>
         <input type="text" name="title" id="title" placeholder="Product Title">
-        <label for="description">Accessory Description:</label>
+        <label for="description">Card Description:</label>
         <textarea name="description" id="description" placeholder="Product Description"></textarea>
-        <label for="imageUpload">Accessory Image:</label>
+        <label for="imageUpload">Card Image:</label>
         <input type="file" name="image" id="imageUpload" accept="image/*">
-        <label for="title">Accessory Price:</label>
+        <label for="title">Card Price:</label>
         <input type="text" name="price" id="title" placeholder="Product Price">
         <br>
-        <input type="submit" name="accessories" value="Enter">
+        <input type="submit" name="cards" value="Enter">
     </form>
     </div>
 </body>

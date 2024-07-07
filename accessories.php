@@ -112,3 +112,4 @@ getProduct();
             &copy; 2024 Arcade Pulse. All rights reserved.
         </div>
     </footer>
+    </html>
