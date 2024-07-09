@@ -18,6 +18,7 @@ while ($row=mysqli_fetch_assoc($result)) {
         <h2>$Title</h2>
         <p>$Description</p>
         <p class='price'>$Price $</p>
+        <a href='details.php?ID=$ID'>Show Details</a>
     </div>";
 }
 }
@@ -39,8 +40,67 @@ while ($row=mysqli_fetch_assoc($r)) {
         <h2>$Titl</h2>
         <p>$Descriptio</p>
         <p class='price'>$Pric $</p>
+        <a href='card_details.php?ID=$I'>Show Details</a>
     </div>";
 }
+}
+
+function details(){
+    global $conn;
+    if (isset($_GET['ID'])) {
+        $ID=$_GET['ID'];
+    $select="select * from `accessories` where ID=$ID" ;
+$result=mysqli_query($conn,$select);
+
+while ($row=mysqli_fetch_assoc($result)) {
+    $ID=$row['ID'];
+    $Title=$row['Title'];
+    $Description=$row['Description'];
+    $Image=$row['Image'];
+    $Price=$row['Price'];
+
+    echo"<div class='detail'>
+    <div class='left'>  
+        <img class='img' src='Products/$Image' alt=''>
+    </div>
+    <div class='right'>
+        <h2>$Title</h2>
+        <p>$Description</p>
+        <p class='price'>$Price $</p>
+        <a href='#'>Add to Cart</a>
+    </div>
+    </div>";
+}
+    }
+}
+
+function cards(){
+    global $conn;
+    if (isset($_GET['ID'])) {
+        $I=$_GET['ID'];
+    $s="select * from `cards` where ID=$I" ;
+    $r=mysqli_query($conn,$s);
+
+    while ($row=mysqli_fetch_assoc($r)) {
+        $I=$row['ID'];
+        $Titl=$row['Title'];
+        $Descriptio=$row['Description'];
+        $Imag=$row['Image'];
+        $Pric=$row['Price'];
+
+    echo"<div class='detail'>
+    <div class='left'>  
+        <img class='img' src='Cards/$Imag' alt=''>
+    </div>
+    <div class='right'>
+        <h2>$Titl</h2>
+        <p>$Descriptio</p>
+        <p class='price'>$Pric $</p>
+        <a href='#'>Add to Cart</a>
+    </div>
+    </div>";
+}
+    }
 }
 
 function searchProduct(){
@@ -89,3 +149,4 @@ while ($ro=mysqli_fetch_assoc($re)) {
 }
 
 }
+

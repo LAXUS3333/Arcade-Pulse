@@ -55,13 +55,13 @@ include('Functions/common.php');
 </nav>
 <h1>Cards</h1>
 <div class="cards">
-        <div class="card">
+        <!-- <div class="card">
         <img class="img" src="Accessories/1.png" alt="">
         <h2>Razer Naga Pro Wireless Gaming Mouse</h2>
             <p>With nearly 30,000 games from AAA to indie and 
                 everything in-between.</p>
                 <p class="price">200 $</p>
-            </div>
+            </div> -->
  <?php
 
 getCard();

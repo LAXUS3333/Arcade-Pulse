@@ -249,3 +249,49 @@ h1{
 
 
 }
+.card a{
+    color: rgb(200, 230, 255);
+}
+.detail{
+    width: 98%;
+    display: flex;
+    text-align: center;
+}
+.detail img{
+    width:80%;
+    height:90%;
+    padding: 20px;
+    text-align: left;
+}
+.detail h2{
+    margin-top: 50px;
+    color: blanchedalmond;
+    text-align: center;
+    font-size: 70px;
+}
+.detail p{
+    padding: 15px;
+    font-size: 20px;
+}
+.detail p.price{
+    font-size:30px;
+    color: azure;
+}
+
+.left{
+height: 50%;
+width: 60%;
+display: flex;
+align-items: center;
+padding: 72px;
+}
+.right {
+width: 50%;
+height: 65vh;
+align-items: center;
+padding: 50px;
+}
+.detail a{
+    color: rgb(200, 230, 255);
+    font-size: 20px;
+}
