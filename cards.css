@@ -198,3 +198,79 @@ ul li a {
     font-family: "Josefin Sans";
     align-self: self-end;
 }
+h1{
+    text-align: center;
+    font-size: 70px;
+    color: #aeffa0;
+    padding: 50px;
+}
+.num{
+    text-align: center;
+    font-size: 70px;
+    padding: 30px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-family: Arial, sans-serif;
+}
+th, td {
+    border: 1px solid #747474;
+    padding: 8px;
+    text-align: center;
+}
+.product-img {
+    width: 50px;
+    height: 50px;
+}
+.btn {
+    padding: 5px 10px;
+    margin: 2px;
+    border: none;
+    background-color: #2f2f2f;
+    color: rgb(191, 255, 143);
+    cursor: pointer;
+}
+.btn:hover {
+    background-color: #555;
+}
+.quantity-display {
+    display: inline-block;
+    width: 30px;
+    text-align: center;
+}
+.shop{
+    background-color: #555;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: "Josefin Sans";
+    align-self: self-end;
+    font-size: 15px;
+    margin-right: 60px;
+    padding: 20px;
+    padding: 10px 20px;
+
+
+}
+.container{
+    text-align: center;
+    padding: 30px;
+}
+.input-container {
+    position: relative;
+    display: inline-block;
+}
+
+.input-container .fa-trash-can {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #ffffff; /* You can change the color as needed */
+}
+

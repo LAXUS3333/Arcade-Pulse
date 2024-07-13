@@ -107,7 +107,7 @@ if (isset($_POST['cards'])){
         <label for="title">Card Price:</label>
         <input type="text" name="price" id="title" placeholder="Product Price">
         <br>
-        <input type="submit" name="cards" value="Enter">
+        <input type="submit" name="cards" id="enter" value="Enter">
     </form>
     </div>
 </body>

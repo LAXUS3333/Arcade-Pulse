@@ -295,3 +295,10 @@ padding: 50px;
     color: rgb(200, 230, 255);
     font-size: 20px;
 }
+
+h1{
+    text-align: center;
+    font-size: 70px;
+    color: #aeffa0;
+    padding: 50px;
+}

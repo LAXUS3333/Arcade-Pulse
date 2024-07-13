@@ -53,6 +53,7 @@ include('Functions/common.php');
 </nav>
 <?php
 details();
+cart();
 ?>
 
 <footer>

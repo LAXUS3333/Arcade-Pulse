@@ -1,5 +1,6 @@
 <?php
 session_start();
+include('Functions/common.php');
 ?>
 
 <!DOCTYPE html>
@@ -40,7 +41,8 @@ session_start();
             if (isset($_SESSION['userId'])) {
                 echo '<form action="SignUp/logout.php" method="post">
                 <button type="submit" class="log">Logout</button>
-                </form>';
+                </form>
+                <li><a href="cart.php"><i class="fa-solid fa-cart-shopping"></i></a></li>';
             }
 
             else {
@@ -190,7 +192,10 @@ session_start();
     <h2 class="ff">You've reached the end <i class="fa-solid fa-ghost"></i></i></h2>
 
 
+<?php
 
+cart();
+?>
     <footer>
         <div class="footer-content">
             <div class="footer-section about">
