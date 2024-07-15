@@ -59,7 +59,7 @@ include('Functions/common.php');
     <div class="H">
         <?php
         if (isset($_SESSION['userId'])) {
-           echo' <h1>We have awaited your presence!<br><br>Welcome</h1>'; 
+           echo" <h1>We have awaited your presence!<br><br>Welcome ".$_SESSION['userUid']; 
 
         }
         else {

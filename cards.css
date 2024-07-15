@@ -273,4 +273,15 @@ th, td {
     pointer-events: none;
     color: #ffffff; /* You can change the color as needed */
 }
+#total-price{
+    text-align: center;
+    font-size: 70px;
+    padding: 30px;
+}
+h3{
+    text-align: center;
+    font-size: 70px;
+    padding: 30px;
+}
+
 
