@@ -24,7 +24,7 @@ session_start();
              <li><a href="#">Shop &#x25BE</a>
                 <ul class="d">
                     <li><a href="games.php">Games</a></li>
-                    <li><a href="#">Cards</a></li>
+                    <li><a href="Cards.php">Cards</a></li>
                     <li><a href="accessories.php">Accessories</a></li>
                 </li>
             </ul>
@@ -42,7 +42,8 @@ session_start();
             if (isset($_SESSION['userId'])) {
                 echo '<form action="SignUp/logout.php" method="post">
                 <button type="submit" class="log">Logout</button>
-                </form>';
+                </form>
+                <li><a href="cart.php"><i class="fa-solid fa-cart-shopping"></i></a></li>';
             }
 
             else {
