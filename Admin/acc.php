@@ -80,8 +80,8 @@ if (isset($_POST['accessories'])){
 <body>
 <nav>
         <ul>
-            <li><a href="#">Games</a></li>
-            <li><a href="#">Accessories</a></li>
+            <li><a href="games.php">Games</a></li>
+            <li><a href="acc.php">Accessories</a></li>
             <li><a href="cards.php">Cards</a></li>
             <li><a href="user.php">Users</a></li>
             <li><a href="#">Orders</a></li>

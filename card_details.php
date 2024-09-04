@@ -25,7 +25,7 @@ include('Functions/common.php');
                 <ul class="d">
                     <li><a href="games.php">Games</a></li>
                     <li><a href="Cards.php">Cards</a></li>
-                    <li><a href="#">Accessories</a></li>
+                    <li><a href="accessories.php">Accessories</a></li>
                 </li>
             </ul>
                 <li><a href="Aboutus.php">About</a></li>

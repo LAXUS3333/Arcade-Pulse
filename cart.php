@@ -2,11 +2,25 @@
 session_start();
 include('Functions/common.php');
 
+// Remove item from cart
 if (isset($_POST['remove'])) {
     $itemID = $_POST['itemID'];
     $i = getIPAddress();
     $delete_query = "DELETE FROM `cart_details` WHERE `IP`='$i' AND `ID`='$itemID'";
     $result = mysqli_query($conn, $delete_query);
+    if ($result) {
+        header("Location: cart.php");
+        exit();
+    }
+}
+
+// Update quantity and recalculate total
+if (isset($_POST['update'])) {
+    $itemID = $_POST['itemID'];
+    $quantity = $_POST['quantity'];
+    $i = getIPAddress();
+    $update_query = "UPDATE `cart_details` SET `Quantity`='$quantity' WHERE `IP`='$i' AND `ID`='$itemID'";
+    $result = mysqli_query($conn, $update_query);
     if ($result) {
         header("Location: cart.php");
         exit();
@@ -50,7 +64,6 @@ if (isset($_POST['remove'])) {
                 </form>
             </li>
             <?php
-
             if (isset($_SESSION['userId'])) {
                 echo '<form action="SignUp/logout.php" method="post">
                 <button type="submit" class="log">Logout</button>
@@ -77,73 +90,73 @@ if (isset($_POST['remove'])) {
                 $select_query = "Select * from `cart_details` where IP='$i'";
                 $result = mysqli_query($conn, $select_query);
                 while ($row = mysqli_fetch_array($result)) {
-
                     $ID = $row['ID'];
+                    $quantity = $row['Quantity'];
                     $select2 = "select * from `cards` where ID=$ID";
                     $select = "select * from `accessories` where ID=$ID";
                     $result1 = mysqli_query($conn, $select);
+
                     while ($row_price = mysqli_fetch_array($result1)) {
                         $P = $row_price['Price'];
                         $T = $row_price['Title'];
                         $D = $row_price['Description'];
                         $Im = $row_price['Image'];
-                        $Price = array($row_price['Price']);
-                        $values = array_sum($Price);
-                        $total += $values;
+                        $itemTotal = $P * $quantity;
+                        $total += $itemTotal;
                         ?>
                         <tr>
                             <th><img src="Products/<?php echo $Im ?>" alt="Product Image" class="product-img"></th>
                             <td><?php echo $T ?></td>
                             <td><?php echo $D ?></td>
-                            <td class="product-price" data-price="<?php echo $P ?>"><?php echo $P ?>$</td>
+                            <td><?php echo $P ?>$</td>
                             <td>
                                 <form action="" method="post">
-                                    <div class="input-container">
-                                        <i class="fa-solid fa-trash-can"></i>
-                                        <input type="hidden" name="itemID" value="<?php echo $ID; ?>">
-                                        <input type="submit" value="" class="Search" name="remove">
-                                    </div>
+                                    <input type="hidden" name="itemID" value="<?php echo $ID; ?>">
+                                    <input type="hidden" name="quantity" value="<?php echo $quantity; ?>">
+                                    <button type="submit" name="remove"><i class="fa-solid fa-trash-can"></i></button>
                                 </form>
                             </td>
                             <td>
-                                <button class="btn" onclick="decreaseQuantity(this)">-</button>
-                                <span class="quantity-display">1</span>
-                                <button class="btn" onclick="increaseQuantity(this)">+</button>
+                                <form action="" method="post">
+                                    <input type="text" name="quantity" value="<?php echo $quantity; ?>" class="quantity-display">
+                                    <input type="hidden" name="itemID" value="<?php echo $ID; ?>">
+                                    <button type="submit" name="update">Update</button>
+                                </form>
                             </td>
-                            <td class="individual-total-price"><?php echo $P ?>$</td>
+                            <td><?php echo $itemTotal ?>$</td>
                         </tr>
                         <?php
                     }
+
                     $result2 = mysqli_query($conn, $select2);
                     while ($row_pric = mysqli_fetch_array($result2)) {
                         $Pr = $row_pric['Price'];
                         $Ti = $row_pric['Title'];
                         $De = $row_pric['Description'];
                         $Img = $row_pric['Image'];
-                        $Pric = array($row_pric['Price']);
-                        $value = array_sum($Pric);
-                        $total += $value;
+                        $itemTotal = $Pr * $quantity;
+                        $total += $itemTotal;
                         ?>
                         <tr>
                             <th><img src="Cards/<?php echo $Img ?>" alt="Product Image" class="product-img"></th>
                             <td><?php echo $Ti ?></td>
                             <td><?php echo $De ?></td>
-                            <td class="product-price" data-price="<?php echo $Pr ?>"><?php echo $Pr ?>$</td>
+                            <td><?php echo $Pr ?>$</td>
                             <td>
                                 <form action="" method="post">
-                                    <div class="input-container">
-                                        <i class="fa-solid fa-trash-can"></i>
-                                        <input type="hidden" name="itemID" value="<?php echo $ID; ?>">
-                                        <input type="submit" value="" class="Search" name="remove">
-                                    </div>
+                                    <input type="hidden" name="itemID" value="<?php echo $ID; ?>">
+                                    <input type="hidden" name="quantity" value="<?php echo $quantity; ?>">
+                                    <button type="submit" name="remove"><i class="fa-solid fa-trash-can"></i></button>
                                 </form>
                             </td>
                             <td>
-                                <button class="btn" onclick="decreaseQuantity(this)">-</button>
-                                <span class="quantity-display">1</span>
-                                <button class="btn" onclick="increaseQuantity(this)">+</button>
+                                <form action="" method="post">
+                                    <input type="text" name="quantity" value="<?php echo $quantity; ?>" class="quantity-display">
+                                    <input type="hidden" name="itemID" value="<?php echo $ID; ?>">
+                                    <button type="submit" name="update">Update</button>
+                                </form>
                             </td>
-                            <td class="individual-total-price"><?php echo $Pr ?>$</td>
+                            <td><?php echo $itemTotal ?>$</td>
                         </tr>
                         <?php
                     }
@@ -155,9 +168,7 @@ if (isset($_POST['remove'])) {
                 <input type="submit" class="shop" value="Continue Shopping?">
             </form>
             <br>
-            <form action="buy.php" method="post">
-                <input type="submit" class="shop" value="Buy Now!">
-            </form>
+            <a href="buy.php?price=<?php echo $total;?>">Buy Now!</a>
         </div>
     </div>
 
@@ -205,42 +216,5 @@ if (isset($_POST['remove'])) {
             &copy; 2024 Arcade Pulse. All rights reserved.
         </div>
     </footer>
-
-    <script>
-        function updateTotalPrice() {
-            let totalPrice = 0;
-            let rows = document.querySelectorAll('table tr');
-            rows.forEach(row => {
-                let priceElement = row.querySelector('.product-price');
-                let quantityElement = row.querySelector('.quantity-display');
-                let individualTotalPriceElement = row.querySelector('.individual-total-price');
-                if (priceElement && quantityElement && individualTotalPriceElement) {
-                    let price = parseFloat(priceElement.dataset.price);
-                    let quantity = parseInt(quantityElement.textContent);
-                    let individualTotalPrice = price * quantity;
-                    individualTotalPriceElement.textContent = individualTotalPrice + '$';
-                    totalPrice += individualTotalPrice;
-                }
-            });
-            document.getElementById('total-price').textContent = totalPrice;
-        }
-
-        function increaseQuantity(button) {
-            let display = button.previousElementSibling;
-            display.textContent = parseInt(display.textContent) + 1;
-            updateTotalPrice();
-        }
-
-        function decreaseQuantity(button) {
-            let display = button.nextElementSibling;
-            let currentQuantity = parseInt(display.textContent);
-            if (currentQuantity > 1) {
-                display.textContent = currentQuantity - 1;
-                updateTotalPrice();
-            }
-        }
-
-        window.onload = updateTotalPrice;
-    </script>
 </body>
 </html>
