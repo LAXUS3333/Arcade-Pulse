@@ -94,6 +94,7 @@ if (isset($_POST['update'])) {
                     $quantity = $row['Quantity'];
                     $select2 = "select * from `cards` where ID=$ID";
                     $select = "select * from `accessories` where ID=$ID";
+                    $select3 = "select * from `games` where ID=$ID";
                     $result1 = mysqli_query($conn, $select);
 
                     while ($row_price = mysqli_fetch_array($result1)) {
@@ -157,6 +158,39 @@ if (isset($_POST['update'])) {
                                 </form>
                             </td>
                             <td><?php echo $itemTotal ?>$</td>
+                        </tr>
+                        <?php
+                    }
+
+                    $result3= mysqli_query($conn, $select3);
+                    while ($row_pri = mysqli_fetch_array($result3)) {
+                        $Pr3 = $row_pri['Price'];
+                        $Ti3 = $row_pri['Title'];
+                        $De3 = $row_pri['Description'];
+                        $Img3 = $row_pri['Image'];
+                        $itemTotal3 = $Pr3 * $quantity;
+                        $total += $itemTotal3;
+                        ?>
+                        <tr>
+                            <th><img src="Games_database/<?php echo $Img3 ?>" alt="Product Image" class="product-img"></th>
+                            <td><?php echo $Ti3 ?></td>
+                            <td><?php echo $De3 ?></td>
+                            <td><?php echo $Pr3 ?>$</td>
+                            <td>
+                                <form action="" method="post">
+                                    <input type="hidden" name="itemID" value="<?php echo $ID; ?>">
+                                    <input type="hidden" name="quantity" value="<?php echo $quantity; ?>">
+                                    <button type="submit" name="remove"><i class="fa-solid fa-trash-can"></i></button>
+                                </form>
+                            </td>
+                            <td>
+                                <form action="" method="post">
+                                    <input type="text" name="quantity" value="<?php echo $quantity; ?>" class="quantity-display">
+                                    <input type="hidden" name="itemID" value="<?php echo $ID; ?>">
+                                    <button type="submit" name="update">Update</button>
+                                </form>
+                            </td>
+                            <td><?php echo $itemTotal3 ?>$</td>
                         </tr>
                         <?php
                     }

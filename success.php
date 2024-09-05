@@ -57,16 +57,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['tran_id'])) {
                      <input type="submit" value="Search" class="Search" name="product">
                 </form>
             </li>
-            <?php
-            if (isset($_SESSION['userId'])) {
-                echo '<form action="SignUp/logout.php" method="post">
+            <form action="SignUp/logout.php" method="post">
                 <button type="submit" class="log">Logout</button>
                 </form>
-                <li><a href="#"><i class="fa-solid fa-cart-shopping"></i></a></li>';
-            } else {
-                echo ' <li><a href="Login.php"><i class="fa-solid fa-user"></i></a></li>';
-            }
-            ?>
+                <li><a href="cart.php"><i class="fa-solid fa-cart-shopping"></i></a></li>
         </ul>
     </nav>
     <div class="L">
