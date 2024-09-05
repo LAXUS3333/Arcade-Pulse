@@ -45,6 +45,63 @@ while ($row=mysqli_fetch_assoc($r)) {
 }
 }
 
+function getGames($limit, $offset){
+    global $conn;
+    
+    // Fetch a limited number of games starting from a specific offset
+    $se = "SELECT * FROM `games` LIMIT $limit OFFSET $offset";
+    $re = mysqli_query($conn, $se);
+    
+    while ($row2 = mysqli_fetch_assoc($re)) {
+        $i = $row2['ID'];
+        $Title2 = $row2['Title'];
+        $Description2 = $row2['Description'];
+        $Image2 = $row2['Image'];
+        $Price2 = $row2['Price'];
+    
+        echo "<div class='card'>
+                <img class='img' src='Games_database/$Image2' alt=''>
+                <h2>$Title2</h2>
+                <p>$Description2</p>
+                <p class='price'>$Price2 $</p>
+                <a href='games_details.php?ID=$i'>Show Details</a>
+            </div>";
+    }
+    
+    // Generate a link to the next set of results (increase the offset)
+    $new_offset = $offset + $limit;
+}
+
+
+function games(){
+    global $conn;
+    if (isset($_GET['ID'])) {
+        $i=$_GET['ID'];
+    $se="select * from `games` where ID=$i" ;
+    $re=mysqli_query($conn,$se);
+
+    while ($row2=mysqli_fetch_assoc($re)) {
+        $i=$row2['ID'];
+        $Title2=$row2['Title'];
+        $Description2=$row2['Description'];
+        $Image2=$row2['Image'];
+        $Price2=$row2['Price'];
+
+    echo"<div class='detail'>
+    <div class='left'>  
+        <img class='img' src='Games_database/$Image2' alt=''>
+    </div>
+    <div class='right'>
+        <h2>$Title2</h2>
+        <p>$Description2</p>
+        <p class='price'>$Price2 $</p>
+        <a href='index.php?cart=$i'>Add to Cart</a>
+    </div>
+    </div>";
+}
+    }
+}
+
 function details(){
     global $conn;
     if (isset($_GET['ID'])) {

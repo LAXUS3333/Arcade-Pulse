@@ -419,3 +419,49 @@ ul li:hover ul.d{
     font-family: "Josefin Sans";
     align-self: self-end;
 }
+
+.cards{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 30px;
+    margin-top: 60px;
+}
+.card{
+    height: 320px;
+    width: 340px;
+    background-color:rgb(26, 26, 26);
+    padding: 3% 8%;
+    border: solid rgb(19, 19, 19);
+    border-radius: 9px;
+    transition: 0.6s;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+.card:hover{
+    background-color: transparent;
+    transform: translateY(-9px);
+    border-color: #313131;
+}
+.card:hover:after{
+    width: 225%;
+    top:-100%;
+}
+.card h2{
+    color: blanchedalmond;
+    text-align: center;
+    padding: 9px;
+}
+.card p{
+    padding: 9px;
+}
+.card p.price{
+    font-size:30px;
+    color: azure;
+}
+.img {
+    width: 250px;
+    border-radius: 20px;
+}

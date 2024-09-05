@@ -1,5 +1,7 @@
 <?php
 session_start();
+include('SignUp/database.php');
+include('Functions/common.php');
 ?>
 
 
@@ -98,280 +100,73 @@ session_start();
         <div id="action">
             <h1  class="c">Action</h1>
             
-            <div class="wow_imgage end wow" data-wow-delay="0.3s">
-                <img src="Top Rated/p4.jpg" width="270" height="180"></img>
-                <div class="content">
-                    <h3>CyberPunk 2077</h3><br>
-                    <p>The Elder Scrolls V: Skyrim is an action role-playing video game developed by Bethesda Game Studios and published by Bethesda Softworks.</p>
-                    <br><span>Price: 100 &dollar;</span>
-                </div>
-            </div>
-        <div>
-            <div class="wow_imgage end wow" data-wow-delay="0.3s">
-                <img src="Top Rated/p10.jpg" width="270" height="180"></img>
-                <div class="content">
-                    <h3>PUBG</h3><br>
-                    <p>The Elder Scrolls V: Skyrim is an action role-playing video game developed by Bethesda Game Studios and published by Bethesda Softworks.</p>
-                    <br><span>Price: 100 &dollar;</span>
-                </div>
-            </div>
-            <div class="wow_imgage end wow" data-wow-delay="0.3s">
-                <img src="Top Rated/p3.jpg" width="270" height="180"></img>
-                <div class="content">
-                    <h3>Final Fantasy VII</h3><br>
-                    <p>The Elder Scrolls V: Skyrim is an action role-playing video game developed by Bethesda Game Studios and published by Bethesda Softworks.</p>
-                    <br><span>Price: 100 &dollar;</span>
-                </div>
-            </div>
-            <div class="wow_imgage end wow" data-wow-delay="0.3s">
-                <img src="Top Rated/p2.png" width="270" height="180"></img>
-                <div class="content">
-                    <h3>Monster Hunter</h3><br>
-                    <p>The Elder Scrolls V: Skyrim is an action role-playing video game developed by Bethesda Game Studios and published by Bethesda Softworks.</p>
-                    <br><span>Price: 100 &dollar;</span>
-                </div>
-            </div>
-    </div>
-    <br>
-    <div>
+            <div class="cards">
+
+         
+<?php 
+getGames(3,0);
+?>
+</div>
     <h1 id="anime" class="c">Anime</h1>
-<div class="wow_imgage end wow" data-wow-delay="0.3s">
-    <img src="Games/blue.jpg" width="270" height="180"></img>
-    <div class="content">
-        <h3>Blue Archive</h3><br>
-        <p>The Elder Scrolls V: Skyrim is an action role-playing video game developed by Bethesda Game Studios and published by Bethesda Softworks.</p>
-        <br><span>Price: 100 &dollar;</span>
-    </div>
-</div>
-<div class="wow_imgage end wow" data-wow-delay="0.3s">
-    <img src="Games/genshin.png" width="270" height="180"></img>
-    <div class="content">
-        <h3>Genshin Impact</h3><br>
-        <p>The Elder Scrolls V: Skyrim is an action role-playing video game developed by Bethesda Game Studios and published by Bethesda Softworks.</p>
-        <br><span>Price: 100 &dollar;</span>
-    </div>
-</div>
-<div class="wow_imgage end wow" data-wow-delay="0.3s">
-    <img src="Games/persona.png" width="270" height="180"></img>
-    <div class="content">
-        <h3>Persona 5</h3><br>
-        <p>The Elder Scrolls V: Skyrim is an action role-playing video game developed by Bethesda Game Studios and published by Bethesda Softworks.</p>
-        <br><span>Price: 100 &dollar;</span>
-    </div>
-</div>
-<div class="wow_imgage end wow" data-wow-delay="0.3s">
-    <img src="Games/pkmn.jpg" width="270" height="180"></img>
-    <div class="content">
-        <h3>Pokemon Go</h3><br>
-        <p>The Elder Scrolls V: Skyrim is an action role-playing video game developed by Bethesda Game Studios and published by Bethesda Softworks.</p>
-        <br><span>Price: 100 &dollar;</span>
-    </div>
-</div>
+    <div class="cards">
+
+         
+<?php 
+getGames(3,3);
+?>
 </div>
 
 <h1 id="op" class="c">Open World</h1>
-<br>
-<div class="wow_imgage end wow" data-wow-delay="0.3s">
-    <img src="Best Seller/l3.jpg" width="270" height="180"></img>
-    <div class="content">
-        <h3>Red Dead Redemption</h3><br>
-        <p>The Elder Scrolls V: Skyrim is an action role-playing video game developed by Bethesda Game Studios and published by Bethesda Softworks.</p>
-        <br><span>Price: 100 &dollar;</span>
-    </div>
-</div>
-<div class="wow_imgage end wow" data-wow-delay="0.3s">
-    <img src="Best Seller/l5.jpg" width="270" height="180"></img>
-    <div class="content">
-        <h3>Grand Theft Auto</h3><br>
-        <p>The Elder Scrolls V: Skyrim is an action role-playing video game developed by Bethesda Game Studios and published by Bethesda Softworks.</p>
-        <br><span>Price: 100 &dollar;</span>
-    </div>
-</div>
-<div class="wow_imgage end wow" data-wow-delay="0.3s">
-    <img src="Top Rated/p8.jpg" width="270" height="180"></img>
-    <div class="content">
-        <h3>Horizon</h3><br>
-        <p>The Elder Scrolls V: Skyrim is an action role-playing video game developed by Bethesda Game Studios and published by Bethesda Softworks.</p>
-        <br><span>Price: 100 &dollar;</span>
-    </div>
-</div>
-<div class="wow_imgage end wow" data-wow-delay="0.3s">
-    <img src="Top Rated/p1.jpg" width="270" height="180"></img>
-    <div class="content">
-        <h3>SkyRim</h3><br>
-        <p>The Elder Scrolls V: Skyrim is an action role-playing video game developed by Bethesda Game Studios and published by Bethesda Softworks.</p>
-        <br><span>Price: 100 &dollar;</span>
-    </div>
+<div class="cards">
+
+         
+<?php 
+getGames(3,6);
+?>
 </div>
 
 <h1 id="mul" class="c">Multiplayer</h1>
-<br>
-<div class="wow_imgage end wow" data-wow-delay="0.3s">
-    <img src="Best Seller/l4.jpg" width="270" height="180"></img>
-    <div class="content">
-        <h3>Counter Strike</h3><br>
-        <p>The Elder Scrolls V: Skyrim is an action role-playing video game developed by Bethesda Game Studios and published by Bethesda Softworks.</p>
-        <br><span>Price: 100 &dollar;</span>
-    </div>
-</div>
-<div class="wow_imgage end wow" data-wow-delay="0.3s">
-    <img src="Best Seller/l10.jpg" width="270" height="180"></img>
-    <div class="content">
-        <h3>MineCreft</h3><br>
-        <p>The Elder Scrolls V: Skyrim is an action role-playing video game developed by Bethesda Game Studios and published by Bethesda Softworks.</p>
-        <br><span>Price: 100 &dollar;</span>
-    </div>
-</div>
-<div class="wow_imgage end wow" data-wow-delay="0.3s">
-    <img src="Top Rated/p6.jpg" width="270" height="180"></img>
-    <div class="content">
-        <h3>CyberPunk 2077</h3><br>
-        <p>The Elder Scrolls V: Skyrim is an action role-playing video game developed by Bethesda Game Studios and published by Bethesda Softworks.</p>
-        <br><span>Price: 100 &dollar;</span>
-    </div>
-</div>
-<div class="wow_imgage end wow" data-wow-delay="0.3s">
-    <img src="Images/01.png" width="270" height="180"></img>
-    <div class="content">
-        <h3>CyberPunk 2077</h3><br>
-        <p>The Elder Scrolls V: Skyrim is an action role-playing video game developed by Bethesda Game Studios and published by Bethesda Softworks.</p>
-        <br><span>Price: 100 &dollar;</span>
-    </div>
+<div class="cards">
+
+         
+<?php 
+getGames(3,9);
+?>
 </div>
 
 <h1 id="rpg" class="c">Role Playing</h1>
-<div class="wow_imgage end wow" data-wow-delay="0.3s">
-    <img src="Images/12.jpg" width="270" height="180"></img>
-    <div class="content">
-        <h3>CyberPunk 2077</h3><br>
-        <p>The Elder Scrolls V: Skyrim is an action role-playing video game developed by Bethesda Game Studios and published by Bethesda Softworks.</p>
-        <br><span>Price: 100 &dollar;</span>
-    </div>
-</div>
-<div class="wow_imgage end wow" data-wow-delay="0.3s">
-    <img src="Top Rated/p4.jpg" width="270" height="180"></img>
-    <div class="content">
-        <h3>CyberPunk 2077</h3><br>
-        <p>The Elder Scrolls V: Skyrim is an action role-playing video game developed by Bethesda Game Studios and published by Bethesda Softworks.</p>
-        <br><span>Price: 100 &dollar;</span>
-    </div>
-</div>
-<div class="wow_imgage end wow" data-wow-delay="0.3s">
-    <img src="Top Rated/p2.png" width="270" height="180"></img>
-    <div class="content">
-        <h3>CyberPunk 2077</h3><br>
-        <p>The Elder Scrolls V: Skyrim is an action role-playing video game developed by Bethesda Game Studios and published by Bethesda Softworks.</p>
-        <br><span>Price: 100 &dollar;</span>
-    </div>
-</div>
-<div class="wow_imgage end wow" data-wow-delay="0.3s">
-    <img src="Top Rated/p10.jpg" width="270" height="180"></img>
-    <div class="content">
-        <h3>CyberPunk 2077</h3><br>
-        <p>The Elder Scrolls V: Skyrim is an action role-playing video game developed by Bethesda Game Studios and published by Bethesda Softworks.</p>
-        <br><span>Price: 100 &dollar;</span>
-    </div>
+<div class="cards">
+
+         
+<?php 
+getGames(3,12);
+?>
 </div>
 
 <h1 id="sim" class="c">Simulation</h1>
-<div class="wow_imgage end wow" data-wow-delay="0.3s">
-    <img src="Games/fm.jpg" width="270" height="180"></img>
-    <div class="content">
-        <h3>Football Manager</h3><br>
-        <p>The Elder Scrolls V: Skyrim is an action role-playing video game developed by Bethesda Game Studios and published by Bethesda Softworks.</p>
-        <br><span>Price: 100 &dollar;</span>
-    </div>
+<div class="cards">
+
+         
+<?php 
+getGames(3,15);
+?>
 </div>
-<div class="wow_imgage end wow" data-wow-delay="0.3s">
-    <img src="Games/sims.jpg" width="270" height="180"></img>
-    <div class="content">
-        <h3>The Sims 4</h3><br>
-        <p>The Elder Scrolls V: Skyrim is an action role-playing video game developed by Bethesda Game Studios and published by Bethesda Softworks.</p>
-        <br><span>Price: 100 &dollar;</span>
-    </div>
-</div>
-<div class="wow_imgage end wow" data-wow-delay="0.3s">
-    <img src="Games/truck.jpg" width="270" height="180"></img>
-    <div class="content">
-        <h3>Euro Truck Simulator 2</h3><br>
-        <p>The Elder Scrolls V: Skyrim is an action role-playing video game developed by Bethesda Game Studios and published by Bethesda Softworks.</p>
-        <br><span>Price: 100 &dollar;</span>
-    </div>
-</div>
-<div class="wow_imgage end wow" data-wow-delay="0.3s">
-    <img src="Games/war.jpg" width="270" height="180"></img>
-    <div class="content">
-        <h3>War Thunder</h3><br>
-        <p>The Elder Scrolls V: Skyrim is an action role-playing video game developed by Bethesda Game Studios and published by Bethesda Softworks.</p>
-        <br><span>Price: 100 &dollar;</span>
-    </div>
-</div>
+
 <h1 id="sports" class="c">Sports</h1>
-<div class="wow_imgage end wow" data-wow-delay="0.3s">
-    <img src="Top Rated/p5.jpg" width="270" height="180"></img>
-    <div class="content">
-        <h3>Forza Horizon</h3><br>
-        <p>The Elder Scrolls V: Skyrim is an action role-playing video game developed by Bethesda Game Studios and published by Bethesda Softworks.</p>
-        <br><span>Price: 100 &dollar;</span>
-    </div>
-</div>
-<div class="wow_imgage end wow" data-wow-delay="0.3s">
-    <img src="Top Rated/p9.jpg" width="270" height="180"></img>
-    <div class="content">
-        <h3>FIFA 24</h3><br>
-        <p>The Elder Scrolls V: Skyrim is an action role-playing video game developed by Bethesda Game Studios and published by Bethesda Softworks.</p>
-        <br><span>Price: 100 &dollar;</span>
-    </div>
-</div>
-<div class="wow_imgage end wow" data-wow-delay="0.3s">
-    <img src="Best Seller/l6.jpg" width="270" height="180"></img>
-    <div class="content">
-        <h3>Asseto Corsa</h3><br>
-        <p>The Elder Scrolls V: Skyrim is an action role-playing video game developed by Bethesda Game Studios and published by Bethesda Softworks.</p>
-        <br><span>Price: 100 &dollar;</span>
-    </div>
-</div>
-<div class="wow_imgage end wow" data-wow-delay="0.3s">
-    <img src="Games/pes.jpg" width="270" height="180"></img>
-    <div class="content">
-        <h3>eFootball 24</h3><br>
-        <p>The Elder Scrolls V: Skyrim is an action role-playing video game developed by Bethesda Game Studios and published by Bethesda Softworks.</p>
-        <br><span>Price: 100 &dollar;</span>
-    </div>
+<div class="cards">
+
+         
+<?php 
+getGames(3,18);
+?>
 </div>
 <h1 id="vr" class="c">Virtual Reality</h1>
-<br>
-<div class="wow_imgage end wow" data-wow-delay="0.3s">
-    <img src="Games/elite dangerous.jpg" width="270" height="180"></img>
-    <div class="content">
-        <h3>Elite</h3><br>
-        <p>The Elder Scrolls V: Skyrim is an action role-playing video game developed by Bethesda Game Studios and published by Bethesda Softworks.</p>
-        <br><span>Price: 100 &dollar;</span>
-    </div>
-</div>
-<div class="wow_imgage end wow" data-wow-delay="0.3s">
-    <img src="Games/tetris.png" width="270" height="180"></img>
-    <div class="content">
-        <h3>Tetris</h3><br>
-        <p>The Elder Scrolls V: Skyrim is an action role-playing video game developed by Bethesda Game Studios and published by Bethesda Softworks.</p>
-        <br><span>Price: 100 &dollar;</span>
-    </div>
-</div>
-<div class="wow_imgage end wow" data-wow-delay="0.3s">
-    <img src="Games/beat saber.png" width="270" height="180"></img>
-    <div class="content">
-        <h3>Beat Saber</h3><br>
-        <p>The Elder Scrolls V: Skyrim is an action role-playing video game developed by Bethesda Game Studios and published by Bethesda Softworks.</p>
-        <br><span>Price: 100 &dollar;</span>
-    </div>
-</div>
-<div class="wow_imgage end wow" data-wow-delay="0.3s">
-    <img src="Games/half.jpg" width="270" height="180"></img>
-    <div class="content">
-        <h3>Half Life</h3><br>
-        <p>The Elder Scrolls V: Skyrim is an action role-playing video game developed by Bethesda Game Studios and published by Bethesda Softworks.</p>
-        <br><span>Price: 100 &dollar;</span>
-    </div>
+<div class="cards">
+
+         
+<?php 
+getGames(3,21);
+?>
 </div>
 </div>
 </div>

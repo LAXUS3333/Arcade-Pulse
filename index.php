@@ -1,5 +1,6 @@
 <?php
 session_start();
+include('SignUp/database.php');
 include('Functions/common.php');
 ?>
 
@@ -71,41 +72,13 @@ include('Functions/common.php');
     </div>
     <h2 class="gg">Best Deals for the Week!  <i class="fa-solid fa-dragon"></i></h2>
     
-    <div class="service-section">
-        <div class="wow_imgage wow">
-            <img src="Top Rated/p1.jpg" width="270" height="180"></img>
-            <div class="content">
-                <h3>SkyRim</h3><br>
-                <p>The Elder Scrolls V: Skyrim is an action role-playing video game developed by Bethesda Game Studios and published by Bethesda Softworks.</p>
-                <br><span>Price: 100 &dollar;</span>
-            </div>	
-        </div>
+    <div class="cards">
 
-        <div class="wow_imgage wow" data-wow-delay="0.2s">
-            <img src="Top Rated/p7.jpg" width="270" height="180"></img>
-            <div class="content">
-                <h3>Last Epoch</h3><br>
-                <p>The Elder Scrolls V: Skyrim is an action role-playing video game developed by Bethesda Game Studios and published by Bethesda Softworks.</p>
-                <br><span>Price: 100 &dollar;</span>
-            </div>
-        </div>
-
-        <div class="wow_imgage end wow" data-wow-delay="0.3s">
-            <img src="Top Rated/p4.jpg" width="270" height="180"></img>
-            <div class="content">
-                <h3>CyberPunk 2077</h3><br>
-                <p>The Elder Scrolls V: Skyrim is an action role-playing video game developed by Bethesda Game Studios and published by Bethesda Softworks.</p>
-                <br><span>Price: 100 &dollar;</span>
-            </div>
-        </div>
-        <div class="wow_imgage end wow" data-wow-delay="0.3s">
-            <img src="Top Rated/p6.jpg" width="270" height="180"></img>
-            <div class="content">
-                <h3>Risk of Rain 2</h3><br>
-                <p>The Elder Scrolls V: Skyrim is an action role-playing video game developed by Bethesda Game Studios and published by Bethesda Softworks.</p>
-                <br><span>Price: 100 &dollar;</span>
-            </div>
-        </div>
+         
+<?php 
+getGames(3,0);
+?>
+</div>
         <h2 class="ff">Big Discounts! <i class="fa-solid fa-trophy"></i></h2>
         <div class="wow_imgage end wow" data-wow-delay="0.3s">
             <img src="Top Rated/p8.jpg" width="270" height="180"></img>
