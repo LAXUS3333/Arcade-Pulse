@@ -105,7 +105,7 @@
 
     /* For WebKit browsers like Chrome and Safari */
 ::-webkit-scrollbar {
-    width: 12px; /* Adjust width of the scrollbar */
+    width: 11px; /* Adjust width of the scrollbar */
 }
 
 ::-webkit-scrollbar-thumb {
@@ -113,6 +113,10 @@
     border-radius: 6px; /* Round the edges */
 }
 
+::-webkit-scrollbar-corner{
+    width: 7px;
+}
+
 ::-webkit-scrollbar-track {
-    background: #505050; /* Background of the track */
+    background: #383838; /* Background of the track */
 }

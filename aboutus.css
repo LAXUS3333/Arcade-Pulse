@@ -398,3 +398,19 @@ section.show-animate .animate{
     font-family: "Josefin Sans";
     align-self: self-end;
 }
+::-webkit-scrollbar {
+    width: 11px; /* Adjust width of the scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(185, 248, 188); /* Set thumb (scroll bar handle) color */
+    border-radius: 6px; /* Round the edges */
+}
+
+::-webkit-scrollbar-corner{
+    width: 7px;
+}
+
+::-webkit-scrollbar-track {
+    background: #383838; /* Background of the track */
+}

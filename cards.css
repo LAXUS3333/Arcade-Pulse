@@ -225,6 +225,22 @@ th, td {
     width: 50px;
     height: 50px;
 }
+::-webkit-scrollbar {
+    width: 11px; /* Adjust width of the scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(185, 248, 188); /* Set thumb (scroll bar handle) color */
+    border-radius: 6px; /* Round the edges */
+}
+
+::-webkit-scrollbar-corner{
+    width: 7px;
+}
+
+::-webkit-scrollbar-track {
+    background: #383838; /* Background of the track */
+}
 .btn {
     padding: 5px 10px;
     margin: 2px;
