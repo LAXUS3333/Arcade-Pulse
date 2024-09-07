@@ -13,18 +13,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav>
+<nav>
         <ul>
-            <li><a href="#">Games</a></li>
+        <li><a href="games.php">Games</a></li>
+            <li><a href="games_overview.php"> Games Overview</a></li>
             <li><a href="acc.php">Accessories</a></li>
+            <li><a href="accessories_overview.php"> Accessories Overview</a></li>
             <li><a href="cards.php">Cards</a></li>
+            <li><a href="cards_overview.php"> Cards Overview</a></li>
             <li><a href="user.php">Users</a></li>
-            <li><a href="#">Orders</a></li>
-            <li><a href="#">Payments</a></li>
             <li class="search-box">
-                <form action="#" method="get">
-                    <button type="submit">Logout</button>
-                </form>
+            <a href="../SignUp/logout.php">Logout</a>
             </li>
 
         </ul>

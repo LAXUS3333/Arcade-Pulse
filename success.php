@@ -1,5 +1,7 @@
 <?php
+session_id($_GET['session_id']);
 session_start();
+
 include('Functions/common.php');
 
 // Function to clear the cart after a successful payment

@@ -1,5 +1,6 @@
 <?php
-
+session_start();
+include('Functions/common.php');
 /* PHP */
 $post_data = array();
 $post_data['store_id'] = "ecomm66d763c9763f5";
@@ -7,7 +8,7 @@ $post_data['store_passwd'] = "ecomm66d763c9763f5@ssl";
 $post_data['total_amount'] = $_GET['price'];
 $post_data['currency'] = "BDT";
 $post_data['tran_id'] = "SSLCZ_TEST_".uniqid();
-$post_data['success_url'] = "http://localhost:4000/php-ecommerce-app/success.php";
+$post_data['success_url'] = "http://localhost:4000/php-ecommerce-app/success.php?session_id=" . session_id();
 $post_data['fail_url'] = "http://localhost/new_sslcz_gw/fail.php";
 $post_data['cancel_url'] = "http://localhost/new_sslcz_gw/cancel.php";
 # $post_data['multi_card_name'] = "mastercard,visacard,amexcard";  # DISABLE TO DISPLAY ALL AVAILABLE

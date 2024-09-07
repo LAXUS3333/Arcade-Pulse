@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/905bed9ec4.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
-    <title>User</title>
+    <title>Accessories Overview</title>
     <link rel="icon" href="../Images/arcad.png" type="image/icon type">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,50 +42,58 @@
 
         </ul>
     </nav>
-    <h2 class="u">List of Users</h2>
-    <table class="ok">
-        <thead>
+    <h2 class="u">List of Accessories</h2>
+    <?php
+// Database connection
+$servername = "localhost";
+$dBUsername = "root";
+$dBPassword = "";
+$dBName = "arcade";
+
+$conn = mysqli_connect($servername, $dBUsername, $dBPassword, $dBName);
+
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+// Query to select data
+$sql = "select * from `accessories`";
+$result = mysqli_query($conn, $sql);
+// Check if there are results
+if (mysqli_num_rows($result) > 0) {
+    // Display table structure
+    echo "<table class='ok'>
             <tr>
-                <th>ID</th>
-                <th>Username</th>
-                <th>Email</th>
-                <th>Password</th>
+                <th>Game Name</th>
+                <th>Game Description</th>
+                <th>Game Image</th>
+                <th>Price</th>
                 <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php
-                $servername = "localhost";
-                $dBUsername = "root";
-                $dBPassword = "";
-                $dBName = "arcade";
+            </tr>";
 
-                $conn = mysqli_connect($servername, $dBUsername, $dBPassword, $dBName);
+    // Loop through and output data for each row
+    while ($row = mysqli_fetch_array($result)) {
+        $imageFullPath = $row['Image'];
+        echo "<tr>
+                <td>" . $row['Title'] . "</td>
+                <td>" . $row['Description'] . "</td>"
+?>                
+                <th><img src="../Products/<?php echo $imageFullPath ?>" alt="Product Image" class="product-img"></th>
+<?php  
+              
 
-                if (!$conn) {
-                    die("Connection failed: " . mysqli_connect_error());
-                }
-
-                $sql = "SELECT * FROM users";
-                $result = $conn->query($sql);
-
-                if ($result && $result->num_rows > 0) {
-                    while ($row = $result->fetch_assoc()) {
-                        echo "<tr>
-                                <td>{$row['idUsers']}</td>
-                                <td>{$row['uidUsers']}</td>
-                                <td>{$row['emailUsers']}</td>
-                                <td>{$row['pwdUsers']}</td>
-                                <td>
+              echo " <td>" . $row['Price'] . "</td>
+                                              <td>
                                     <button type='submit'>Edit</button>
                                     <button type='submit'>Delete</button>
                                 </td>
-                              </tr>";
-                    }
-                }
-                $conn->close();
-            ?>
-        </tbody>
-    </table>
-</body>
-</html>
+              </tr>";
+    }
+    echo "</table>";
+} else {
+    echo "No records found.";
+}
+
+// Close the database connection
+mysqli_close($conn);
+?>

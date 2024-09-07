@@ -36,12 +36,21 @@ if (isset($_POST['Login'])) {
                 }
 
                 else if ($pwdCheck==true) {
+
+                    
                     session_start();
                     $_SESSION['userId']=$row['idUsers'];
                     $_SESSION['userUid']=$row['uidUsers'];
+                    if ($row['uidUsers']=="admin"){
+
+                        header("Location: ../Admin/index.php?login=success");
+
+                    }
+                    else{
 
                     header("Location: ../index.php?login=success");
                     exit();
+                    }
                 }
 
                 else {
