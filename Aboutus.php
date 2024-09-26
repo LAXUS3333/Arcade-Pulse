@@ -79,7 +79,7 @@ session_start();
         <h1 class="animate">Experience Arcade Pulse Hardware</h1>
         <p class="animate">We created the Arcade Pulse Deck and the Valve Index headset to make gaming on the PC even
             better.</p>
-            <a href="">Experience Arcade Pulse Hardware <i class="fa-solid fa-headset"></i></a>
+            <a href="accessories.php">Experience Arcade Pulse Hardware <i class="fa-solid fa-headset"></i></a>
     </div>
          <div class="animate">
              <img src="Videos/psp.png" alt="">

@@ -56,6 +56,23 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['delete_id'])) {
+    $id = $_POST['delete_id'];
+
+    // Delete query
+    $sql_delete = "DELETE FROM `cards` WHERE `ID` = ?";
+    $stmt = mysqli_prepare($conn, $sql_delete);
+    mysqli_stmt_bind_param($stmt, "i", $id);
+
+    if (mysqli_stmt_execute($stmt)) {
+        echo "<p style='color:green;'>Record deleted successfully.</p>";
+    } else {
+        echo "<p style='color:red;'>Error deleting record: " . mysqli_error($conn) . "</p>";
+    }
+
+    mysqli_stmt_close($stmt);
+}
+
 // Query to select data
 $sql = "select * from `cards`";
 $result = mysqli_query($conn, $sql);
@@ -84,8 +101,10 @@ if (mysqli_num_rows($result) > 0) {
 
               echo " <td>" . $row['Price'] . "</td>
                                               <td>
-                                    <button type='submit'>Edit</button>
-                                    <button type='submit'>Delete</button>
+                    <form method='POST' action=''>
+                        <input type='hidden' name='delete_id' value='" . $row['ID'] . "'>
+                        <button type='submit' onclick='return confirm(\"Are you sure you want to delete this card?\")'>Delete</button>
+                    </form>
                                 </td>
               </tr>";
     }

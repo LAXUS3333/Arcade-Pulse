@@ -109,7 +109,7 @@ if (isset($_POST['update'])) {
                             <th><img src="Products/<?php echo $Im ?>" alt="Product Image" class="product-img"></th>
                             <td><?php echo $T ?></td>
                             <td><?php echo $D ?></td>
-                            <td><?php echo $P ?>$</td>
+                            <td><?php echo $P ?>&#2547;</td>
                             <td>
                                 <form action="" method="post">
                                     <input type="hidden" name="itemID" value="<?php echo $ID; ?>">
@@ -124,7 +124,7 @@ if (isset($_POST['update'])) {
                                     <button type="submit" name="update">Update</button>
                                 </form>
                             </td>
-                            <td><?php echo $itemTotal ?>$</td>
+                            <td><?php echo $itemTotal ?>&#2547;</td>
                         </tr>
                         <?php
                     }
@@ -142,7 +142,7 @@ if (isset($_POST['update'])) {
                             <th><img src="Cards/<?php echo $Img ?>" alt="Product Image" class="product-img"></th>
                             <td><?php echo $Ti ?></td>
                             <td><?php echo $De ?></td>
-                            <td><?php echo $Pr ?>$</td>
+                            <td><?php echo $Pr ?>&#2547;</td>
                             <td>
                                 <form action="" method="post">
                                     <input type="hidden" name="itemID" value="<?php echo $ID; ?>">
@@ -157,7 +157,7 @@ if (isset($_POST['update'])) {
                                     <button type="submit" name="update">Update</button>
                                 </form>
                             </td>
-                            <td><?php echo $itemTotal ?>$</td>
+                            <td><?php echo $itemTotal ?>&#2547;</td>
                         </tr>
                         <?php
                     }
@@ -175,7 +175,7 @@ if (isset($_POST['update'])) {
                             <th><img src="Games_database/<?php echo $Img3 ?>" alt="Product Image" class="product-img"></th>
                             <td><?php echo $Ti3 ?></td>
                             <td><?php echo $De3 ?></td>
-                            <td><?php echo $Pr3 ?>$</td>
+                            <td><?php echo $Pr3 ?>&#2547;</td>
                             <td>
                                 <form action="" method="post">
                                     <input type="hidden" name="itemID" value="<?php echo $ID; ?>">
@@ -190,14 +190,14 @@ if (isset($_POST['update'])) {
                                     <button type="submit" name="update">Update</button>
                                 </form>
                             </td>
-                            <td><?php echo $itemTotal3 ?>$</td>
+                            <td><?php echo $itemTotal3 ?>&#2547;</td>
                         </tr>
                         <?php
                     }
                 }
                 ?>
             </table>
-            <h3>Total: $<span id="total-price"><?php echo $total; ?></span></h3>
+            <h3>Total: &#2547;<span id="total-price"><?php echo $total; ?></span></h3>
             <form action="index.php" method="post">
                 <input type="submit" class="shop" value="Continue Shopping?">
             </form>

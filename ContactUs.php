@@ -24,7 +24,7 @@ session_start();
              <li><a href="#">Shop &#x25BE</a>
                 <ul class="d">
                     <li><a href="games.php">Games</a></li>
-                    <li><a href="#">Cards</a></li>
+                    <li><a href="Cards.php">Cards</a></li>
                     <li><a href="accessories.php">Accessories</a></li>
                 </li>
             </ul>

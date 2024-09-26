@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,22 +27,22 @@
 </head>
 <body>
 <nav>
-        <ul>
+    <ul>
         <li><a href="games.php">Games</a></li>
-            <li><a href="games_overview.php"> Games Overview</a></li>
-            <li><a href="acc.php">Accessories</a></li>
-            <li><a href="accessories_overview.php"> Accessories Overview</a></li>
-            <li><a href="cards.php">Cards</a></li>
-            <li><a href="cards_overview.php"> Cards Overview</a></li>
-            <li><a href="user.php">Users</a></li>
-            <li class="search-box">
+        <li><a href="games_overview.php">Games Overview</a></li>
+        <li><a href="acc.php">Accessories</a></li>
+        <li><a href="accessories_overview.php">Accessories Overview</a></li>
+        <li><a href="cards.php">Cards</a></li>
+        <li><a href="cards_overview.php">Cards Overview</a></li>
+        <li><a href="user.php">Users</a></li>
+        <li class="search-box">
             <a href="../SignUp/logout.php">Logout</a>
-            </li>
+        </li>
+    </ul>
+</nav>
+<h2 class="u">List of Accessories</h2>
 
-        </ul>
-    </nav>
-    <h2 class="u">List of Accessories</h2>
-    <?php
+<?php
 // Database connection
 $servername = "localhost";
 $dBUsername = "root";
@@ -56,9 +55,28 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
+// Check if the delete request is made
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['delete_id'])) {
+    $id = $_POST['delete_id'];
+
+    // Delete query
+    $sql_delete = "DELETE FROM `accessories` WHERE `ID` = ?";
+    $stmt = mysqli_prepare($conn, $sql_delete);
+    mysqli_stmt_bind_param($stmt, "i", $id);
+
+    if (mysqli_stmt_execute($stmt)) {
+        echo "<p style='color:green;'>Record deleted successfully.</p>";
+    } else {
+        echo "<p style='color:red;'>Error deleting record: " . mysqli_error($conn) . "</p>";
+    }
+
+    mysqli_stmt_close($stmt);
+}
+
 // Query to select data
-$sql = "select * from `accessories`";
+$sql = "SELECT * FROM `accessories`";
 $result = mysqli_query($conn, $sql);
+
 // Check if there are results
 if (mysqli_num_rows($result) > 0) {
     // Display table structure
@@ -76,17 +94,15 @@ if (mysqli_num_rows($result) > 0) {
         $imageFullPath = $row['Image'];
         echo "<tr>
                 <td>" . $row['Title'] . "</td>
-                <td>" . $row['Description'] . "</td>"
-?>                
-                <th><img src="../Products/<?php echo $imageFullPath ?>" alt="Product Image" class="product-img"></th>
-<?php  
-              
-
-              echo " <td>" . $row['Price'] . "</td>
-                                              <td>
-                                    <button type='submit'>Edit</button>
-                                    <button type='submit'>Delete</button>
-                                </td>
+                <td>" . $row['Description'] . "</td>
+                <td><img src='../Products/" . $imageFullPath . "' alt='Product Image' class='product-img' style='width:100px;'></td>
+                <td>" . $row['Price'] . "</td>
+                <td>
+                    <form method='POST' action=''>
+                        <input type='hidden' name='delete_id' value='" . $row['ID'] . "'>
+                        <button type='submit' onclick='return confirm(\"Are you sure you want to delete this accessory?\")'>Delete</button>
+                    </form>
+                </td>
               </tr>";
     }
     echo "</table>";
@@ -97,3 +113,7 @@ if (mysqli_num_rows($result) > 0) {
 // Close the database connection
 mysqli_close($conn);
 ?>
+
+</body>
+</html>
+

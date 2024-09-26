@@ -18,7 +18,7 @@ function getProduct()
         <img class='img' src='Products/$Image' alt=''>
         <h2>$Title</h2>
         <p>$Description</p>
-        <p class='price'>$Price $</p>
+        <p class='price'>$Price &#2547;</p>
         <a href='details.php?ID=$ID'>Show Details</a>
     </div>";
     }
@@ -41,7 +41,7 @@ function getCard()
         <img class='img' src='Cards/$Imag' alt=''>
         <h2>$Titl</h2>
         <p>$Descriptio</p>
-        <p class='price'>$Pric $</p>
+        <p class='price'>$Pric &#2547;</p>
         <a href='card_details.php?ID=$I'>Show Details</a>
     </div>";
     }
@@ -66,7 +66,7 @@ function getC($limi, $offse)
                 <img class='img' src='Cards/$Image2x' alt=''>
                 <h2>$Title2x</h2>
                 <p>$Description2x</p>
-                <p class='price'>$Price2x $</p>
+                <p class='price'>$Price2x &#2547;</p>
                 <a href='card_details.php?ID=$ix'>Show Details</a>
             </div>";
     }
@@ -94,7 +94,7 @@ function getGames($limit, $offset)
                 <img class='img' src='Games_database/$Image2' alt=''>
                 <h2>$Title2</h2>
                 <p>$Description2</p>
-                <p class='price'>$Price2 $</p>
+                <p class='price'>$Price2 &#2547;</p>
                 <a href='games_details.php?ID=$i'>Show Details</a>
             </div>";
     }
@@ -126,7 +126,7 @@ function games()
     <div class='right'>
         <h2>$Title2</h2>
         <p>$Description2</p>
-        <p class='price'>$Price2 $</p>";
+        <p class='price'>$Price2 &#2547;</p>";
         if (isset($_SESSION['userId'])) {
             echo" <a href='index.php?cart=$i'>Add to Cart</a>
                 </div>
@@ -163,7 +163,7 @@ function details()
     <div class='right'>
         <h2>$Title</h2>
         <p>$Description</p>
-        <p class='price'>$Price $</p>";
+        <p class='price'>$Price &#2547;</p>";
         if (isset($_SESSION['userId'])) {
         echo" <a href='index.php?cart=$ID'>Add to Cart</a>
             </div>
@@ -200,7 +200,7 @@ function cards()
     <div class='right'>
         <h2>$Titl</h2>
         <p>$Descriptio</p>
-        <p class='price'>$Pric $</p>";
+        <p class='price'>$Pric &#2547;</p>";
                 if (isset($_SESSION['userId'])) {
         echo" <a href='index.php?cart=$I'>Add to Cart</a>
             </div>
@@ -244,7 +244,7 @@ function searchProduct()
         <img class='img' src='Products/$Image' alt=''>
         <h2>$Title</h2>
         <p>$Description</p>
-        <p class='price'>$Price $</p>
+        <p class='price'>$Price &#2547;</p>
         <a href='details.php?ID=$ID'>Show Details</a>
     </div>";
         }
@@ -261,7 +261,7 @@ function searchProduct()
         <img class='img' src='Cards/$Imag' alt=''>
         <h2>$Titl</h2>
         <p>$Descriptio</p>
-        <p class='price'>$Pric $</p>
+        <p class='price'>$Pric &#2547;</p>
         <a href='card_details.php?ID=$I'>Show Details</a>
     </div>";
     }
@@ -277,7 +277,7 @@ function searchProduct()
         <img class='img' src='Games_database/$Imagp' alt=''>
         <h2>$Titlp</h2>
         <p>$Descriptiop</p>
-        <p class='price'>$Pricp $</p>
+        <p class='price'>$Pricp &#2547;</p>
         <a href='games_details.php?ID=$Ip'>Show Details</a>
     </div>";
     }
@@ -374,7 +374,7 @@ function price()
     }
 
 
-    echo "<div class='num'>Total amount: $ok $</div>";
+    echo "<div class='num'>Total amount: $ok &#2547;</div>";
 }
 
 function remove()
