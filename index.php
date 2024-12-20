@@ -1,5 +1,7 @@
 <?php
 session_start();
+include('SignUp/database.php');
+include('Functions/common.php');
 ?>
 
 <!DOCTYPE html>
@@ -8,7 +10,6 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arcade Pulse</title>
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/905bed9ec4.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="mation.css">
     <link rel="icon" href="Images/arcad.png" type="image/icon type">
@@ -30,9 +31,10 @@ session_start();
             <li><a href="Aboutus.php">About</a></li>
             <li><a href="ContactUs.php">Contact Us</a></li>
             <li class="search-box">
-                <form action="#" method="get">
-                    <input type="text" name="search" placeholder="Search...">
-                    <button type="submit">Search</button>
+            <form action="Search.php" method="get">
+                     <input type="text" name="data" aria-label="Search" placeholder="Search...">
+                    <!-- <button type="submit">Search</button> -->
+                     <input type="submit" value="Search" class="Search" name="product">
                 </form>
             </li>
             <?php
@@ -40,7 +42,8 @@ session_start();
             if (isset($_SESSION['userId'])) {
                 echo '<form action="SignUp/logout.php" method="post">
                 <button type="submit" class="log">Logout</button>
-                </form>';
+                </form>
+                <li><a href="cart.php"><i class="fa-solid fa-cart-shopping"></i></a></li>';
             }
 
             else {
@@ -57,7 +60,7 @@ session_start();
     <div class="H">
         <?php
         if (isset($_SESSION['userId'])) {
-           echo' <h1>We have awaited your presence!<br><br>Welcome</h1>'; 
+           echo" <h1>We have awaited your presence!<br><br>Welcome ".$_SESSION['userUid']; 
 
         }
         else {
@@ -69,70 +72,21 @@ session_start();
     </div>
     <h2 class="gg">Best Deals for the Week!  <i class="fa-solid fa-dragon"></i></h2>
     
-    <div class="service-section">
-        <div class="wow_imgage wow">
-            <img src="Top Rated/p1.jpg" width="270" height="180"></img>
-            <div class="content">
-                <h3>SkyRim</h3><br>
-                <p>The Elder Scrolls V: Skyrim is an action role-playing video game developed by Bethesda Game Studios and published by Bethesda Softworks.</p>
-                <br><span>Price: 100 &dollar;</span>
-            </div>	
-        </div>
+    <div class="cards">
 
-        <div class="wow_imgage wow" data-wow-delay="0.2s">
-            <img src="Top Rated/p7.jpg" width="270" height="180"></img>
-            <div class="content">
-                <h3>Last Epoch</h3><br>
-                <p>The Elder Scrolls V: Skyrim is an action role-playing video game developed by Bethesda Game Studios and published by Bethesda Softworks.</p>
-                <br><span>Price: 100 &dollar;</span>
-            </div>
-        </div>
-
-        <div class="wow_imgage end wow" data-wow-delay="0.3s">
-            <img src="Top Rated/p4.jpg" width="270" height="180"></img>
-            <div class="content">
-                <h3>CyberPunk 2077</h3><br>
-                <p>The Elder Scrolls V: Skyrim is an action role-playing video game developed by Bethesda Game Studios and published by Bethesda Softworks.</p>
-                <br><span>Price: 100 &dollar;</span>
-            </div>
-        </div>
-        <div class="wow_imgage end wow" data-wow-delay="0.3s">
-            <img src="Top Rated/p6.jpg" width="270" height="180"></img>
-            <div class="content">
-                <h3>Risk of Rain 2</h3><br>
-                <p>The Elder Scrolls V: Skyrim is an action role-playing video game developed by Bethesda Game Studios and published by Bethesda Softworks.</p>
-                <br><span>Price: 100 &dollar;</span>
-            </div>
-        </div>
+         
+<?php 
+getGames(3,0);
+?>
+</div>
         <h2 class="ff">Big Discounts! <i class="fa-solid fa-trophy"></i></h2>
-        <div class="wow_imgage end wow" data-wow-delay="0.3s">
-            <img src="Top Rated/p8.jpg" width="270" height="180"></img>
-            <div class="content">
-                <h3>Horizon</h3><br>
-                <p>The Elder Scrolls V: Skyrim is an action role-playing video game developed by Bethesda Game Studios and published by Bethesda Softworks.</p><br><span>Price: 100 &dollar;</span>
-            </div>
-        </div>
-        <div class="wow_imgage end wow" data-wow-delay="0.3s">
-            <img src="Top Rated/p3.jpg" width="270" height="180"></img>
-            <div class="content">
-                <h3>Final Fantasy VII</h3><br>
-                <p>The Elder Scrolls V: Skyrim is an action role-playing video game developed by Bethesda Game Studios and published by Bethesda Softworks.</p><br><span>Price: 100 &dollar;</span>
-            </div>
-        </div>
-        <div class="wow_imgage end wow" data-wow-delay="0.3s">
-            <img src="Best Seller/l9.jpg" width="270" height="180"></img>
-            <div class="content">
-                <h3>HellDivers 2</h3><br>
-                <p>The Elder Scrolls V: Skyrim is an action role-playing video game developed by Bethesda Game Studios and published by Bethesda Softworks.</p><br><span>Price: 100 &dollar;</span>
-            </div>
-        </div>
-        <div class="wow_imgage end wow" data-wow-delay="0.3s">
-            <img src="Top Rated/p10.jpg" width="270" height="180"></img>
-            <div class="content">
-                <h3>PUBG</h3><br>
-                <p>The Elder Scrolls V: Skyrim is an action role-playing video game developed by Bethesda Game Studios and published by Bethesda Softworks.</p><br><span>Price: 100 &dollar;</span>
-            </div>
-        </div>
+        <div class="cards">
+
+         
+<?php 
+getGames(3,9);
+?>
+</div>
         <h2 class="ff">Our Recomendations <i class="fa-solid fa-heart"></i></h2>
         <div class="xd">
             <div class="images">
@@ -154,43 +108,21 @@ session_start();
             </div>
         </div>
         <h2 class="ff">Gift Card Sale! <i class="fa-solid fa-skull-crossbones"></i></h2>
-        <div class="wow_imgage wow" data-wow-delay="0.1s">
-            <img src="Gift Cards/ff.png" width="160" height="180"></img>
-            <div class="content">
-                <h3>Google Play Gift Cards</h3><br>
-                <p>The Elder Scrolls V: Skyrim is an action role-playing video game developed by Bethesda Game Studios and published by Bethesda Softworks.</p><br><span>Tap for more</span>
-            </div>	
-        </div>
+    
+        <div class="cards">
 
-        <div class="wow_imgage wow" data-wow-delay="0.1s">
-            <img src="Gift Cards/play.png" width="160" height="160"></img>
-            <div class="content">
-                <h3>Playstation Cards</h3><br>
-                <p>The Elder Scrolls V: Skyrim is an action role-playing video game developed by Bethesda Game Studios and published by Bethesda Softworks.</p><br><span>Tap for more</span>
-            </div>	
-        </div>
-
-        <div class="wow_imgage wow" data-wow-delay="0.1s">
-            <img src="Gift Cards/steam.png" width="160" height="160"></img>	
-            <div class="content">
-                <h3>Steam Gift Cards</h3><br>
-                <p>The Elder Scrolls V: Skyrim is an action role-playing video game developed by Bethesda Game Studios and published by Bethesda Softworks.</p><br><span>Tap for more</span>
-            </div>
-        </div>
-        <div class="wow_imgage wow" data-wow-delay="0.1s">
-            <img src="Gift Cards/xbox.png" width="160" height="160"></img>	
-            <div class="content">
-                <h3>Xbox Gift Cards</h3><br>
-                <p>The Elder Scrolls V: Skyrim is an action role-playing video game developed by Bethesda Game Studios and published by Bethesda Softworks.</p>
-                <br>
-                <span>Tap for more</span>
-            </div>
-        </div>
-    </div>
+         
+<?php 
+getC(3,2);
+?>
+</div>
     <h2 class="ff">You've reached the end <i class="fa-solid fa-ghost"></i></i></h2>
 
 
+<?php
 
+cart();
+?>
     <footer>
         <div class="footer-content">
             <div class="footer-section about">

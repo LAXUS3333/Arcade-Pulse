@@ -24,16 +24,17 @@ session_start();
              <li><a href="#">Shop &#x25BE</a>
                 <ul class="d">
                     <li><a href="games.php">Games</a></li>
-                    <li><a href="#">Cards</a></li>
+                    <li><a href="Cards.php">Cards</a></li>
                     <li><a href="accessories.php">Accessories</a></li>
                 </li>
             </ul>
                 <li><a href="Aboutus.php">About</a></li>
                 <li><a href="ContactUs.php">Contact Us</a></li>
                 <li class="search-box">
-                <form action="#" method="get">
-                     <input type="text" name="search" placeholder="Search...">
-                    <button type="submit">Search</button>
+                <form action="Search.php" method="get">
+                     <input type="text" name="data" aria-label="Search" placeholder="Search...">
+                    <!-- <button type="submit">Search</button> -->
+                     <input type="submit" value="Search" class="Search" name="product">
                 </form>
             </li>
             <?php
@@ -41,7 +42,8 @@ session_start();
             if (isset($_SESSION['userId'])) {
                 echo '<form action="SignUp/logout.php" method="post">
                 <button type="submit" class="log">Logout</button>
-                </form>';
+                </form>
+                <li><a href="cart.php"><i class="fa-solid fa-cart-shopping"></i></a></li>';
             }
 
             else {

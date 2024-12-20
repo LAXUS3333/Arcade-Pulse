@@ -98,3 +98,25 @@
         text-align: center;
         padding: 40px;
     }
+    .product-img {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* For WebKit browsers like Chrome and Safari */
+::-webkit-scrollbar {
+    width: 11px; /* Adjust width of the scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(185, 248, 188); /* Set thumb (scroll bar handle) color */
+    border-radius: 6px; /* Round the edges */
+}
+
+::-webkit-scrollbar-corner{
+    width: 7px;
+}
+
+::-webkit-scrollbar-track {
+    background: #383838; /* Background of the track */
+}

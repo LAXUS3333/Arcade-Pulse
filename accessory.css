@@ -16,6 +16,22 @@
     animation-duration: 50s;
     background-size: cover;
 }
+::-webkit-scrollbar {
+    width: 11px; /* Adjust width of the scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(185, 248, 188); /* Set thumb (scroll bar handle) color */
+    border-radius: 6px; /* Round the edges */
+}
+
+::-webkit-scrollbar-corner{
+    width: 7px;
+}
+
+::-webkit-scrollbar-track {
+    background: #383838; /* Background of the track */
+}
 
 .box {
     width: 300px;
@@ -98,6 +114,16 @@ input[type="text"] {
 }
 
 button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #555;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: "Josefin Sans";
+    align-self: self-end;
+}
+.Search{
     padding: 10px 20px;
     background-color: #555;
     color: white;
@@ -224,4 +250,71 @@ h1{
 .card p.price{
     font-size:30px;
     color: azure;
+}
+.t{
+    text-align: center;
+    align-items: center;
+    font-size: 40px;
+    padding: 50px;
+}
+.log{
+
+    padding: 10px;
+    margin-left: 5px;
+    margin-bottom: 7px;
+
+
+}
+.card a{
+    color: rgb(200, 230, 255);
+}
+.detail{
+    width: 98%;
+    display: flex;
+    text-align: center;
+}
+.detail img{
+    width:80%;
+    height:90%;
+    padding: 20px;
+    text-align: left;
+}
+.detail h2{
+    margin-top: 50px;
+    color: blanchedalmond;
+    text-align: center;
+    font-size: 70px;
+}
+.detail p{
+    padding: 15px;
+    font-size: 20px;
+}
+.detail p.price{
+    font-size:30px;
+    color: azure;
+}
+
+.left{
+height: 50%;
+width: 60%;
+display: flex;
+align-items: center;
+padding: 72px;
+}
+.right {
+width: 50%;
+height: 65vh;
+align-items: center;
+padding: 50px;
+}
+.detail a{
+    color: rgb(200, 230, 255);
+    font-size: 20px;
+}
+
+h1{
+    text-align: center;
+    font-size: 70px;
+    color: #aeffa0;
+    padding: 50px;
 }

@@ -137,7 +137,7 @@ ul li:hover ul.d{
         
     }
     20% {
-        background-image: url(Images/12.jpg);
+        background-image: url(Images/03.jpg);
     }
     40% {
         background-image: url(Images/13.jpg);
@@ -151,6 +151,22 @@ ul li:hover ul.d{
     100% {
         background-image: url(Images/14.jpg);
     }
+}
+::-webkit-scrollbar {
+    width: 11px; /* Adjust width of the scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(185, 248, 188); /* Set thumb (scroll bar handle) color */
+    border-radius: 6px; /* Round the edges */
+}
+
+::-webkit-scrollbar-corner{
+    width: 7px;
+}
+
+::-webkit-scrollbar-track {
+    background: #383838; /* Background of the track */
 }
 
 .box h1 {
@@ -265,4 +281,21 @@ ul li a {
 .signUp:hover{
     background-color: transparent;
     color: rgb(127, 255, 30);
+}
+.log{
+
+    padding: 10px;
+    margin-left: 5px;
+    margin-bottom: 7px;
+}
+
+.Search{
+    padding: 10px 20px;
+    background-color: #555;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: "Josefin Sans";
+    align-self: self-end;
 }

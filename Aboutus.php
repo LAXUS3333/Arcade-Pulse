@@ -30,9 +30,10 @@ session_start();
             <li><a href="Aboutus.php">About</a></li>
             <li><a href="ContactUs.php">Contact Us</a></li>
                 <li class="search-box">
-                <form action="#" method="get">
-                     <input type="text" name="search" placeholder="Search...">
-                    <button type="submit">Search</button>
+                <form action="Search.php" method="get">
+                     <input type="text" name="data" aria-label="Search" placeholder="Search...">
+                    <!-- <button type="submit">Search</button> -->
+                     <input type="submit" value="Search" class="Search" name="product">
                 </form>
             </li>
             <?php
@@ -40,7 +41,8 @@ session_start();
             if (isset($_SESSION['userId'])) {
                 echo '<form action="SignUp/logout.php" method="post">
                 <button type="submit" class="log">Logout</button>
-                </form>';
+                </form>
+                <li><a href="cart.php"><i class="fa-solid fa-cart-shopping"></i></a></li>';
             }
 
             else {
@@ -77,7 +79,7 @@ session_start();
         <h1 class="animate">Experience Arcade Pulse Hardware</h1>
         <p class="animate">We created the Arcade Pulse Deck and the Valve Index headset to make gaming on the PC even
             better.</p>
-            <a href="">Experience Arcade Pulse Hardware <i class="fa-solid fa-headset"></i></a>
+            <a href="accessories.php">Experience Arcade Pulse Hardware <i class="fa-solid fa-headset"></i></a>
     </div>
          <div class="animate">
              <img src="Videos/psp.png" alt="">

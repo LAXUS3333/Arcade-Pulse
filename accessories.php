@@ -1,6 +1,7 @@
 <?php
 session_start();
 include('SignUp/database.php');
+include('Functions/common.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,10 +31,10 @@ include('SignUp/database.php');
                 <li><a href="Aboutus.php">About</a></li>
                 <li><a href="ContactUs.php">Contact Us</a></li>
                 <li class="search-box">
-                <form action="#" method="get">
+                <form action="Search.php" method="get">
                      <input type="text" name="data" aria-label="Search" placeholder="Search...">
                     <!-- <button type="submit">Search</button> -->
-                     <input type="submit" value="Search" class="search" name="product">
+                     <input type="submit" value="Search" class="Search" name="product">
                 </form>
             </li>
             <?php
@@ -41,7 +42,8 @@ include('SignUp/database.php');
             if (isset($_SESSION['userId'])) {
                 echo '<form action="SignUp/logout.php" method="post">
                 <button type="submit" class="log">Logout</button>
-                </form>';
+                </form>
+                <li><a href="cart.php"><i class="fa-solid fa-cart-shopping"></i></a></li>';
             }
 
             else {
@@ -52,32 +54,16 @@ include('SignUp/database.php');
 </nav>
 <h1>Accessories</h1>
 <div class="cards">
-        <div class="card">
+        <!-- <div class="card">
         <img class="img" src="Accessories/1.png" alt="">
         <h2>Razer Naga Pro Wireless Gaming Mouse</h2>
             <p>With nearly 30,000 games from AAA to indie and 
                 everything in-between.</p>
                 <p class="price">200 $</p>
-            </div>
+            </div> -->
  <?php
 
-$select="select * from `accessories`" ;
-$result=mysqli_query($conn,$select);
-
-while ($row=mysqli_fetch_assoc($result)) {
-    $ID=$row['ID'];
-    $Title=$row['Title'];
-    $Description=$row['Description'];
-    $Image=$row['Image'];
-    $Price=$row['Price'];
-
-    echo"<div class='card'>
-        <img class='img' src='Products/$Image' alt=''>
-        <h2>$Title</h2>
-        <p>$Description</p>
-        <p class='price'>$Price $</p>
-    </div>";
-}
+getProduct();
 
 
 ?>
@@ -127,3 +113,4 @@ while ($row=mysqli_fetch_assoc($result)) {
             &copy; 2024 Arcade Pulse. All rights reserved.
         </div>
     </footer>
+    </html>
